@@ -1,0 +1,26 @@
+{
+  "name": "chameleon",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start-client": "node src/client.js",
+    "start-server": "node src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kevcoxe/chameleon.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kevcoxe/chameleon/issues"
+  },
+  "homepage": "https://github.com/kevcoxe/chameleon#readme",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "redis": "^3.1.2",
+    "uuid": "^8.3.2"
+  }
+}
