@@ -1,5 +1,6 @@
 
-const { Game } = require('./game')
+require('dotenv').config()
+const { loadGame, createGame, joinGame, startGame, endGame } = require('./src/gameUtils')
 
 const jobList = [
     'fireman',
@@ -33,10 +34,26 @@ const players = [
 ]
 
 
-const myGame = new Game({ wordList: jobList })
+const main = async () => {
+    const gameid = await createGame({ wordList: jobList })
 
-// load players
-players.forEach((player) => myGame.addPlayer(player))
+    // load players
 
-myGame.startGame()
-myGame.endGame()
+    for (let i = 0; i < players.length; i++) {
+        await joinGame(gameid, players[i])
+    }
+
+    await startGame(gameid)
+    await endGame(gameid)
+
+    console.log(await loadGame(gameid))
+
+}
+
+(async () => {
+    try {
+        await main()
+    } catch (e) {
+        console.log(e)
+    }
+})()
