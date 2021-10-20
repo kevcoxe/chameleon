@@ -9,7 +9,7 @@ services:
     ports:
       - "6379:6379"
   chameleon_server:
-    build: .
+    image: node:12
     container_name: chameleon_server
     restart: always
     environment:
