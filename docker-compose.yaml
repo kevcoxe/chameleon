@@ -6,17 +6,15 @@ services:
     restart: always
     expose:
       - 6379
+  chameleon_api:
+    build: .
+    container_name: chameleon_api
+    restart: always
+    environment:
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
     ports:
-      - "6379:6379"
-  # chameleon_server:
-  #   build:
-  #     context: .
-  #     dockerfile: serverDockerfile
-  #   container_name: chameleon_server
-  #   restart: always
-  #   environment:
-  #     - REDIS_HOST=redis
-  #     - REDIS_PORT=6379
+      - "3000:3000"
   # chameleon_client:
   #   build:
   #     context: .
