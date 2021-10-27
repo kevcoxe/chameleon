@@ -15,12 +15,3 @@ services:
       - REDIS_PORT=6379
     ports:
       - "3000:3000"
-  # chameleon_client:
-  #   build:
-  #     context: .
-  #     dockerfile: clientDockerfile
-  #   container_name: chameleon_client
-  #   restart: always
-  #   environment:
-  #     - REDIS_HOST=redis
-  #     - REDIS_PORT=6379
