@@ -56,7 +56,7 @@ app.post('/startGame/:gameid', async (req, res) => {
     res.send(game.exportToJSON())
 })
 
-app.post('/endGame/:gameid', async (req, res) => {
+app.delete('/endGame/:gameid', async (req, res) => {
     await endGame(req.params.gameid)
     const game = await loadGame(req.params.gameid)
     res.send(game.exportToJSON())
