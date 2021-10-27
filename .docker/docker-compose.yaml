@@ -1,0 +1,17 @@
+version: "3.7"
+services:
+  redis:
+    image: redis
+    container_name: redis_chameleon
+    restart: always
+    expose:
+      - 6379
+    ports:
+      - "6379:6379"
+  chameleon_server:
+    build: ..
+    container_name: chameleon_server
+    restart: always
+    environment:
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
