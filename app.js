@@ -7,7 +7,6 @@ const app = express()
 app.use(express.json());
 const port = process.env. PORT || 3000
 
-
 const jobList = [
     'fireman',
     'police',
@@ -29,7 +28,7 @@ const jobList = [
 
 
 app.get('/', (req, res) => {
-  res.send('Hello World!')
+    res.send('hello world')
 })
 
 app.get('/game/:gameid', async (req, res) => {
